@@ -1,7 +1,9 @@
-from gtts import gTTS
 import tkinter as tk
 from tkinter import ttk
+from gtts import gTTS
+
 import subprocess
+import pathlib
 import os
 
 
@@ -15,6 +17,7 @@ class GoogleNyan:
     """
 
     def __init__(self, master):
+        self.create_folders()
         self.master = master
         self.master.title("Google Voice Downloader")
         self.mainframe = ttk.Frame(self.master, padding="3 3 12 12")
@@ -51,7 +54,12 @@ class GoogleNyan:
         self.message_entry.focus()
         # Press the <Return> key will download voice
         self.master.bind('<Return>', self.download_voice)
+        
 
+    def create_folders(self):
+        pathlib.Path('store/').mkdir(exist_ok=True)
+        pathlib.Path('temp/').mkdir(exist_ok=True)
+    
     def download_voice(self):
         """
         gtts official manual: https://pypi.python.org/pypi/gTTS
