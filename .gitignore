@@ -1,0 +1,9 @@
+# python interpreter
+/venv
+
+# IDE
+.vscode/*
+
+# data
+/store/*
+/temp/*
