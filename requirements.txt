@@ -6,6 +6,6 @@ click==6.7
 gTTS==2.0.1
 gTTS-token==1.1.1
 idna==2.7
-requests==2.19.1
+requests==2.20.0
 six==1.11.0
 urllib3==1.23
